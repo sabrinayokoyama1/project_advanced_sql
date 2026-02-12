@@ -37,4 +37,22 @@ SELECT
     re.emprestimos_ativos,
     DATEDIFF(CURRENT_DATE, rt.ultima_transacao) AS dias_sem_transacao,
     CASE 
-        WHEN DATEDIFF(CURRENT_DATE, rt.ul_
+        WHEN DATEDIFF(CURRENT_DATE, rt.ultima_transacao) > 30 THEN 1
+        ELSE 0
+    END AS churn_flag
+FROM clientes c
+LEFT JOIN contas co ON c.cliente_id = co.cliente_id
+LEFT JOIN resumo_transacoes rt ON c.cliente_id = rt.cliente_id
+LEFT JOIN resumo_emprestimos re ON c.cliente_id = re.cliente_id
+GROUP BY
+    c.cliente_id,
+    c.idade,
+    c.renda_mensal,
+    c.score_credito,
+    rt.qtd_transacoes,
+    rt.total_debito,
+    rt.total_credito,
+    rt.ultima_transacao,
+    re.qtd_emprestimos,
+    re.total_emprestimos,
+    re.emprestimos_ativos;
