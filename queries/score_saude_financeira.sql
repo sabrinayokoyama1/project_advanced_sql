@@ -1,56 +1,57 @@
 WITH gastos AS (
-    SELECT 
-        co.cliente_id,
-        SUM(t.valor) AS total_gastos
-    FROM contas co
-    JOIN transacoes t 
-        ON co.conta_id = t.conta_id
-    WHERE t.tipo = 'Débito'
-    GROUP BY co.cliente_id
+    SELECT
+        A.cliente_id,
+        SUM(B.valor) AS total_gastos
+    FROM contas AS A
+    INNER JOIN transacoes AS B
+        ON A.conta_id = B.conta_id
+    WHERE B.tipo = 'Debito'
+    GROUP BY
+        A.cliente_id
 ),
 
 emprestimos_ativos AS (
-    SELECT 
-        cliente_id,
-        SUM(valor) AS total_emprestimos
-    FROM emprestimos
-    WHERE status = 'Ativo'
-    GROUP BY cliente_id
+    SELECT
+        A.cliente_id,
+        SUM(A.valor) AS total_emprestimos
+    FROM emprestimos AS A
+    WHERE A.status = 'Ativo'
+    GROUP BY
+        A.cliente_id
 )
 
-SELECT 
-    c.cliente_id,
-    c.nome,
-    c.renda_mensal,
-    COALESCE(g.total_gastos, 0) AS total_gastos,
-    co.saldo,
-    COALESCE(e.total_emprestimos, 0) AS total_emprestimos,
+SELECT
+    A.cliente_id,
+    A.nome,
+    A.renda_mensal,
+    COALESCE(C.total_gastos, 0) AS total_gastos,
+    B.saldo,
+    COALESCE(D.total_emprestimos, 0) AS total_emprestimos,
 
-    -- Indicadores
-    (co.saldo / c.renda_mensal) AS proporcao_saldo_renda,
-    (COALESCE(g.total_gastos, 0) / c.renda_mensal) AS proporcao_gastos_renda,
+    (B.saldo / A.renda_mensal) AS proporcao_saldo_renda,
+    (COALESCE(C.total_gastos, 0) / A.renda_mensal) AS proporcao_gastos_renda,
 
-    -- Score de saude financeira
     CASE
-        WHEN co.saldo >= c.renda_mensal 
-             AND COALESCE(e.total_emprestimos, 0) = 0
-            THEN 'Excelente'
+        WHEN B.saldo >= A.renda_mensal
+             AND COALESCE(D.total_emprestimos, 0) = 0
+            THEN 'Excelente' -- saldo alto e sem dívidas
 
-        WHEN co.saldo >= c.renda_mensal * 0.5 
-             AND COALESCE(e.total_emprestimos, 0) <= c.renda_mensal * 2
-            THEN 'Boa'
+        WHEN B.saldo >= A.renda_mensal * 0.5
+             AND COALESCE(D.total_emprestimos, 0) <= A.renda_mensal * 2
+            THEN 'Boa' -- saldo razoável e dívidas controladas
 
-        WHEN COALESCE(g.total_gastos, 0) > c.renda_mensal
-            THEN 'Risco'
+        WHEN COALESCE(C.total_gastos, 0) > A.renda_mensal
+            THEN 'Risco' -- gasta mais do que ganha
 
-        ELSE 'Atenção'
+        ELSE 'Atencao' -- situação intermediária
     END AS score_saude_financeira
 
-FROM clientes c
-JOIN contas co 
-    ON c.cliente_id = co.cliente_id
-LEFT JOIN gastos g 
-    ON c.cliente_id = g.cliente_id
-LEFT JOIN emprestimos_ativos e 
-    ON c.cliente_id = e.cliente_id
-ORDER BY score_saude_financeira;
+FROM clientes AS A
+INNER JOIN contas AS B
+    ON A.cliente_id = B.cliente_id
+LEFT JOIN gastos AS C
+    ON A.cliente_id = C.cliente_id
+LEFT JOIN emprestimos_ativos AS D
+    ON A.cliente_id = D.cliente_id
+ORDER BY
+    score_saude_financeira;
