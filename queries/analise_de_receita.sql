@@ -1,17 +1,21 @@
-SELECT 
-    c.cliente_id,
-    c.nome,
-    c.cidade,
-    COUNT(t.transacao_id) AS qtd_creditos,
-    SUM(t.valor) AS total_recebido,
-    AVG(t.valor) AS valor_medio_credito,
-    MAX(t.valor) AS maior_credito,
-    MIN(t.valor) AS menor_credito
-FROM clientes c
-JOIN contas co 
-    ON c.cliente_id = co.cliente_id
-JOIN transacoes t 
-    ON co.conta_id = t.conta_id
-WHERE t.tipo = 'Crédito'
-GROUP BY c.cliente_id, c.nome, c.cidade
-ORDER BY total_recebido DESC;
+SELECT
+    A.cliente_id,
+    A.nome,
+    A.cidade,
+    COUNT(C.transacao_id) AS qtd_creditos,
+    SUM(C.valor) AS total_recebido,
+    AVG(C.valor) AS valor_medio_credito,
+    MAX(C.valor) AS maior_credito,
+    MIN(C.valor) AS menor_credito
+FROM clientes AS A
+INNER JOIN contas AS B
+    ON A.cliente_id = B.cliente_id
+INNER JOIN transacoes AS C
+    ON B.conta_id = C.conta_id
+WHERE C.tipo = 'Credito'
+GROUP BY
+    A.cliente_id,
+    A.nome,
+    A.cidade
+ORDER BY
+    total_recebido DESC;
