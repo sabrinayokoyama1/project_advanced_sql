@@ -1,6 +1,7 @@
 """Dashboard Streamlit do Projeto Indicadores Financeiros.
 
 Deploy no Streamlit Community Cloud: arquivo principal streamlit_app.py.
+Compatível com Python 3.14 e Altair 6.3.
 """
 from __future__ import annotations
 
