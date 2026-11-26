@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100c1c">
+  <meta name="description" content="Dashboard de indicadores financeiros com base sintética reproduzível e análise SQL.">
+  <title>Projeto Indicadores Financeiros</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Menu principal">
+      <a class="brand" href="#visao-geral" aria-label="Projeto Indicadores Financeiros, início">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>Indicadores<br>Financeiros</strong><small>PROJETO DE ANÁLISE</small></span>
+      </a>
+      <p class="nav-label">EXPLORAR</p>
+      <nav class="nav" aria-label="Seções">
+        <button class="nav-link active" data-view="overview" type="button" aria-current="page"><span class="nav-icon">◫</span>Visão geral</button>
+        <button class="nav-link" data-view="clients" type="button"><span class="nav-icon">♧</span>Clientes</button>
+        <button class="nav-link" data-view="method" type="button"><span class="nav-icon">▤</span>Metodologia</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="data-note"><span class="note-icon">✦</span><strong>Dados de demonstração</strong><p>Base inteiramente fictícia, criada para explorar indicadores e consultas SQL.</p></div>
+        <a class="repo-link" href="https://github.com/sabrinayokoyama1/project_advanced_sql" target="_blank" rel="noopener noreferrer">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumb">PROJETO <span>/</span> <span id="breadcrumb-view">VISÃO GERAL</span></div>
+        <div class="topbar-right"><span class="synthetic-dot"></span> DADOS SINTÉTICOS <span class="topbar-sep"></span> ATUALIZAÇÃO: 31 OUT 2026</div>
+      </header>
+
+      <div class="content">
+        <div class="page-heading">
+          <div><p class="eyebrow">INTELIGÊNCIA FINANCEIRA</p><h1 id="page-title">Visão geral</h1><p id="page-subtitle" class="subtitle">Uma leitura clara do comportamento financeiro da carteira.</p></div>
+          <button id="export-button" class="export-button" type="button" title="Exportar resumo filtrado em CSV"><span aria-hidden="true">↓</span> Exportar CSV</button>
+        </div>
+
+        <div class="filter-bar" id="filter-bar">
+          <div class="filter-copy"><span class="filter-icon" aria-hidden="true">⌕</span><span>Filtros da análise</span></div>
+          <label for="period-filter">Período <select id="period-filter"><option value="12m">Últimos 12 meses</option><option value="2026">Ano de 2026</option><option value="2025">Ano de 2025</option><option value="all">Todo o período</option></select></label>
+          <label for="city-filter">Cidade <select id="city-filter"><option value="all">Todas as cidades</option></select></label>
+          <button id="reset-filters" class="reset-button" type="button">Limpar filtros</button>
+        </div>
+
+        <section id="overview-view" class="view" aria-labelledby="page-title">
+          <div class="section-intro"><div><p class="section-kicker">PANORAMA DA CARTEIRA</p><h2>Indicadores em destaque</h2></div><span id="period-caption" class="caption-pill"></span></div>
+          <div class="kpi-grid">
+            <article class="kpi-card"><div class="kpi-top"><span>Entradas</span><span class="kpi-icon income">↗</span></div><strong id="kpi-income">—</strong><p>Créditos no período</p></article>
+            <article class="kpi-card"><div class="kpi-top"><span>Saídas</span><span class="kpi-icon expense">↘</span></div><strong id="kpi-expense">—</strong><p>Débitos no período</p></article>
+            <article class="kpi-card emphasis"><div class="kpi-top"><span>Resultado</span><span class="kpi-icon result">≈</span></div><strong id="kpi-net">—</strong><p>Entradas menos saídas</p></article>
+            <article class="kpi-card"><div class="kpi-top"><span>Transações</span><span class="kpi-icon count">▥</span></div><strong id="kpi-count">—</strong><p>Movimentações registradas</p></article>
+          </div>
+          <div class="dashboard-grid">
+            <article class="panel trend-panel"><div class="panel-head"><div><p class="section-kicker">FLUXO FINANCEIRO</p><h3>Evolução mensal</h3><p>Entradas e saídas da carteira ao longo do período</p></div><div class="legend"><span><i class="legend-dot teal"></i>Entradas</span><span><i class="legend-dot coral"></i>Saídas</span></div></div><div id="trend-chart" class="trend-chart" role="img" aria-label="Gráfico de evolução mensal de entradas e saídas"></div></article>
+            <article class="panel categories-panel"><div class="panel-head"><div><p class="section-kicker">COMPORTAMENTO</p><h3>Despesas por categoria</h3><p>Distribuição dos débitos no período</p></div></div><div id="category-chart" class="category-chart"></div></article>
+            <article class="panel health-panel"><div class="panel-head"><div><p class="section-kicker">RETRATO ATUAL</p><h3>Saúde financeira</h3><p>Classificação dos clientes em 31 out 2026</p></div></div><div class="health-content"><div id="health-donut" class="donut" role="img" aria-label="Distribuição da saúde financeira"><div class="donut-center"><strong id="health-total">—</strong><span>clientes</span></div></div><div id="health-legend" class="health-legend"></div></div></article>
+            <article class="panel cities-panel"><div class="panel-head"><div><p class="section-kicker">VISÃO REGIONAL</p><h3>Resultado por cidade</h3><p>Entradas menos saídas no período</p></div></div><div class="table-wrap"><table><thead><tr><th>Cidade</th><th>Clientes</th><th>Resultado</th></tr></thead><tbody id="cities-body"></tbody></table></div></article>
+          </div>
+          <div class="bottom-grid"><article class="insight-card"><div class="insight-icon">✦</div><div><p class="section-kicker">LEITURA DOS DADOS</p><h3 id="insight-title">—</h3><p id="insight-text">—</p></div></article><article class="snapshot-card"><p class="section-kicker">BASE COMPLETA</p><div class="snapshot-metrics"><div><strong id="base-clients">—</strong><span>clientes</span></div><div><strong id="base-accounts">—</strong><span>contas</span></div><div><strong id="base-loans">—</strong><span>empréstimos</span></div></div><p>Fotografia sintética da carteira em 31 out 2026.</p></article></div>
+        </section>
+
+        <section id="clients-view" class="view hidden" aria-labelledby="page-title">
+          <div class="section-intro"><div><p class="section-kicker">PERFIL DA CARTEIRA</p><h2>Clientes e risco</h2></div><span class="caption-pill">Fotografia em 31 out 2026</span></div>
+          <div class="client-stat-grid"><article class="mini-stat"><span>Clientes na seleção</span><strong id="client-count">—</strong></article><article class="mini-stat"><span>Renda média mensal</span><strong id="client-income">—</strong></article><article class="mini-stat"><span>Saldo devedor</span><strong id="client-debt">—</strong></article><article class="mini-stat"><span>Risco alto</span><strong id="client-high-risk">—</strong></article></div>
+          <div class="client-panels"><article class="panel"><div class="panel-head"><div><p class="section-kicker">EXPOSIÇÃO</p><h3>Faixas de risco</h3><p>Regras descritivas sobre score, dívida e atraso</p></div></div><div id="risk-bars" class="risk-bars"></div></article><article class="panel"><div class="panel-head"><div><p class="section-kicker">CRÉDITO</p><h3>Empréstimos</h3><p>Situação na data de referência</p></div></div><div id="loan-status" class="loan-status"></div></article></div>
+          <article class="panel client-table-panel"><div class="panel-head"><div><p class="section-kicker">DETALHAMENTO</p><h3>Base de clientes</h3><p>Busque pelo nome ou cidade; primeiras 50 linhas exibidas</p></div><label class="search-box"><span aria-hidden="true">⌕</span><input id="client-search" type="search" placeholder="Buscar cliente" aria-label="Buscar cliente"></label></div><div class="table-wrap"><table class="client-table"><thead><tr><th>Cliente</th><th>Cidade</th><th>Renda mensal</th><th>Saldo</th><th>Dívida</th><th>Risco</th></tr></thead><tbody id="clients-body"></tbody></table></div><p id="client-table-count" class="table-foot"></p></article>
+        </section>
+
+        <section id="method-view" class="view hidden" aria-labelledby="page-title">
+          <div class="method-hero"><p class="section-kicker">TRANSPARÊNCIA</p><h2>De onde vêm os indicadores</h2><p>Uma base sintética e reproduzível conecta o esquema relacional, as consultas SQL e esta visualização. Os números exibidos são calculados a partir dos dados gerados, sem acesso a informações reais de clientes.</p></div>
+          <div class="method-grid"><article class="method-card"><span>01</span><h3>Base fictícia</h3><p>360 clientes, contas, transações e empréstimos gerados com semente fixa. O histórico cobre novembro de 2024 a outubro de 2026.</p></article><article class="method-card"><span>02</span><h3>Consultas auditáveis</h3><p>CTEs, agregações, funções de janela e regras explícitas produzem séries mensais, categorias, comparativos regionais e classificações.</p></article><article class="method-card"><span>03</span><h3>Filtros consistentes</h3><p>Período e cidade afetam fluxos e despesas. Saldo, dívida e saúde financeira são fotografias em 31 de outubro de 2026.</p></article></div>
+          <article class="panel definitions"><p class="section-kicker">DEFINIÇÕES</p><h3>Como ler os números</h3><dl><div><dt>Entradas e saídas</dt><dd>Soma dos créditos e débitos registrados. Transferências internas não são geradas.</dd></div><div><dt>Resultado</dt><dd>Entradas menos saídas no período filtrado; não representa lucro contábil.</dd></div><div><dt>Risco</dt><dd>Classificação demonstrativa por score, atraso, dívida/renda e gasto recente. Não é modelo de crédito.</dd></div><div><dt>Saúde financeira</dt><dd>Regra ilustrativa que compara saldo, renda mensal e saldo devedor na data de referência.</dd></div></dl></article>
+          <a class="method-link" href="https://github.com/sabrinayokoyama1/project_advanced_sql" target="_blank" rel="noopener noreferrer">Explorar código e dados no GitHub <span aria-hidden="true">↗</span></a>
+        </section>
+      </div>
+      <footer>Projeto Indicadores Financeiros <span>·</span> Dados 100% fictícios para fins educacionais</footer>
+    </main>
+  </div>
+  <div id="status-message" role="status" class="sr-only"></div>
+</body>
+</html>
