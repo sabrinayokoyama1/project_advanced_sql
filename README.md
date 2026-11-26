@@ -51,3 +51,16 @@ web/                   dashboard estático e extrato agregado
 ```
 
 **Limites:** a distribuição dos registros é simulada para demonstração. Os saldos incluem valores de abertura fictícios, e os indicadores não devem ser usados para decisões financeiras reais.
+
+## Publicar no Streamlit Community Cloud
+
+O arquivo principal é [`streamlit_app.py`](streamlit_app.py). Na tela **Create app** do Streamlit, escolha este repositório, a branch com as alterações aprovadas e `streamlit_app.py` como caminho do arquivo. O `requirements.txt` instala Streamlit, pandas e Altair; `.streamlit/config.toml` define o tema escuro violeta. A aplicação carrega o mesmo JSON agregado da versão web.
+
+Para testar localmente:
+
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+O dashboard web em `web/` também usa o tema escuro violeta.

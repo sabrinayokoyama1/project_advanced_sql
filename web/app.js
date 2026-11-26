@@ -56,7 +56,7 @@ function renderTrend(transactions, months) {
   const labelEvery = Math.max(1, Math.ceil(series.length / 6));
   const labels = series.map((p, i) => (i % labelEvery === 0 || i === series.length-1) ? `<text class="chart-label" x="${x(i)}" y="${H-9}" text-anchor="middle">${monthLabel(p.month)}</text>` : '').join('');
   const dot = (key, color) => series.length ? `<circle cx="${x(series.length-1)}" cy="${y(series.at(-1)[key])}" r="5" fill="${color}" stroke="white" stroke-width="2"/>` : '';
-  $('#trend-chart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${lines}${labels}<polyline class="chart-line" points="${points('income')}" stroke="#18b4a2"/><polyline class="chart-line" points="${points('expense')}" stroke="#f28c7d"/>${dot('income','#18b4a2')}${dot('expense','#f28c7d')}</svg>`;
+  $('#trend-chart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${lines}${labels}<polyline class="chart-line" points="${points('income')}" stroke="#a77aff"/><polyline class="chart-line" points="${points('expense')}" stroke="#df9aff"/>${dot('income','#a77aff')}${dot('expense','#df9aff')}</svg>`;
   $('#trend-chart').setAttribute('aria-label', `Entradas e saídas mensais de ${monthLabel(months[0])} a ${monthLabel(months.at(-1))}`);
 }
 function renderCategories(transactions) {
@@ -69,7 +69,7 @@ function renderCategories(transactions) {
 }
 function renderHealth(clients) {
   const values = ['Excelente', 'Boa', 'Atenção'].map((name) => ({ name, count: clients.filter((row) => row.saude === name).length }));
-  const colors = ['#16b7a4', '#78d4c4', '#f0ac7e'];
+  const colors = ['#986af0', '#c093ff', '#e0b2ff'];
   const total = clients.length || 1;
   let from = 0;
   const stops = values.map((item, i) => { const to = from + item.count / total * 100; const segment = `${colors[i]} ${from}% ${to}%`; from = to; return segment; });
@@ -109,9 +109,9 @@ function renderClients() {
   $('#client-income').textContent = compact(sum(clients,'renda_mensal') / Math.max(clients.length,1));
   $('#client-debt').textContent = compact(sum(clients,'saldo_devedor'));
   $('#client-high-risk').textContent = number.format(clients.filter((row) => row.risco === 'Alto').length);
-  const risks = [['Baixo','#19b49e'],['Moderado','#e6b555'],['Alto','#ef8c7b']];
+  const risks = [['Baixo','#a77aff'],['Moderado','#bd8eff'],['Alto','#df9aff']];
   $('#risk-bars').innerHTML = risks.map(([risk,color]) => { const n=clients.filter((row)=>row.risco===risk).length; return `<div class="risk-row"><span>${risk}</span><div class="bar-track"><div class="bar-fill" style="width:${(n/Math.max(clients.length,1)*100).toFixed(1)}%;background:${color}"></div></div><strong>${n}</strong></div>`; }).join('');
-  const statuses = [['Ativo','#19b49e'],['Quitado','#87b3c2'],['Atrasado','#ef8c7b']];
+  const statuses = [['Ativo','#a77aff'],['Quitado','#c2a0eb'],['Atrasado','#df9aff']];
   $('#loan-status').innerHTML = statuses.map(([status,color]) => { const n=sum(loans.filter((row)=>row.status===status),'quantidade'); return `<div class="loan-row"><span>${status}</span><div class="bar-track"><div class="bar-fill" style="width:${(n/Math.max(sum(loans,'quantidade'),1)*100).toFixed(1)}%;background:${color}"></div></div><strong>${n}</strong></div>`; }).join('');
   renderClientTable(clients);
 }
@@ -162,7 +162,7 @@ async function init() {
     setView(hash==='#clientes'?'clients':hash==='#metodologia'?'method':'overview');
   } catch(error) {
     $('#status-message').classList.remove('sr-only');
-    $('#status-message').style.cssText='display:block;margin:20px;padding:20px;background:#fff0ee;color:#a34436;border-radius:8px';
+    $('#status-message').style.cssText='display:block;margin:20px;padding:20px;background:#422544;color:#f2b7dd;border-radius:8px';
     $('#status-message').textContent=`Não foi possível carregar o dashboard. ${error.message}`;
   }
 }
