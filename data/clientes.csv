@@ -1,0 +1,361 @@
+cliente_id,nome,idade,renda_mensal,cidade,score_credito
+1,Ana Costa,51,7695.88,Campinas,523
+2,Bruno Freitas,25,5060.4,São Paulo,525
+3,Carla Farias,49,8146.02,Sorocaba,719
+4,Diego Lima,31,10895.27,Jundiaí,639
+5,Eduarda Ribeiro,66,6669.71,Itu,557
+6,Felipe Nogueira,45,8241.45,Salto,686
+7,Gabriela Prado,57,6509.7,Campinas,826
+8,Henrique Mendes,28,7851.65,São Paulo,665
+9,Isabela Teixeira,66,10660.01,Sorocaba,757
+10,João Araújo,65,4844.97,Jundiaí,768
+11,Karina Torres,51,8159.32,Itu,834
+12,Lucas Alves,32,6484.44,Salto,777
+13,Mariana Duarte,63,2893.52,Campinas,660
+14,Nicolas Batista,22,6558.27,São Paulo,765
+15,Olívia Ramos,34,5931.29,Sorocaba,590
+16,Paulo Pinto,46,4695.56,Jundiaí,809
+17,Renata Ferreira,61,11013.92,Itu,713
+18,Samuel Mello,44,6157.98,Salto,675
+19,Tatiane Cunha,27,9217.43,Campinas,686
+20,Victor Rocha,43,6433.34,São Paulo,687
+21,Aline Lopes,62,12031.57,Sorocaba,686
+22,Camila Pacheco,35,5984.02,Jundiaí,776
+23,Rafael Dias,46,8293.52,Itu,840
+24,Patrícia Martins,63,6512.81,Salto,576
+25,Letícia Barros,46,11389.75,Campinas,840
+26,André Castro,59,5533.48,São Paulo,567
+27,Beatriz Souza,26,9022.83,Sorocaba,700
+28,Caio Costa,21,13084.89,Jundiaí,654
+29,Ana Freitas,46,11848.01,Itu,674
+30,Bruno Farias,23,16643.91,Salto,649
+31,Carla Lima,49,7851.01,Campinas,693
+32,Diego Ribeiro,65,9805.46,São Paulo,786
+33,Eduarda Nogueira,26,5124.38,Sorocaba,634
+34,Felipe Prado,50,6208.77,Jundiaí,705
+35,Gabriela Mendes,59,16108.04,Itu,658
+36,Henrique Teixeira,32,6496.58,Salto,773
+37,Isabela Araújo,30,5259.26,Campinas,693
+38,João Torres,33,7951.75,São Paulo,657
+39,Karina Alves,45,12933.55,Sorocaba,738
+40,Lucas Duarte,24,3326.3,Jundiaí,840
+41,Mariana Batista,49,3556.64,Itu,693
+42,Nicolas Ramos,38,18120.55,Salto,684
+43,Olívia Pinto,57,8011.24,Campinas,589
+44,Paulo Ferreira,61,10349.04,São Paulo,782
+45,Renata Mello,21,8219.78,Sorocaba,645
+46,Samuel Cunha,39,6294.26,Jundiaí,620
+47,Tatiane Rocha,42,10274.96,Itu,619
+48,Victor Lopes,45,12162.63,Salto,624
+49,Aline Pacheco,51,6471.13,Campinas,732
+50,Camila Dias,31,5460.3,São Paulo,821
+51,Rafael Martins,26,13998.03,Sorocaba,740
+52,Patrícia Barros,49,14691.83,Jundiaí,840
+53,Letícia Castro,24,4695.23,Itu,597
+54,André Souza,66,5285.69,Salto,699
+55,Beatriz Costa,54,13338.04,Campinas,664
+56,Caio Freitas,39,5263.04,São Paulo,618
+57,Ana Farias,33,6225.69,Sorocaba,756
+58,Bruno Lima,30,9844.17,Jundiaí,723
+59,Carla Ribeiro,53,12521.61,Itu,583
+60,Diego Nogueira,21,9895.26,Salto,757
+61,Eduarda Prado,26,9128.38,Campinas,693
+62,Felipe Mendes,66,11351.57,São Paulo,586
+63,Gabriela Teixeira,48,16558.56,Sorocaba,649
+64,Henrique Araújo,64,4707.53,Jundiaí,463
+65,Isabela Torres,31,4362.92,Itu,803
+66,João Alves,31,9197.94,Salto,613
+67,Karina Duarte,27,7378.28,Campinas,685
+68,Lucas Batista,23,5659.27,São Paulo,725
+69,Mariana Ramos,55,6581.58,Sorocaba,665
+70,Nicolas Pinto,53,6892.64,Jundiaí,659
+71,Olívia Ferreira,26,6344.04,Itu,736
+72,Paulo Mello,45,15744.54,Salto,840
+73,Renata Cunha,65,8659.09,Campinas,840
+74,Samuel Rocha,29,10879.91,São Paulo,606
+75,Tatiane Lopes,57,8235.97,Sorocaba,666
+76,Victor Pacheco,65,11514.8,Jundiaí,734
+77,Aline Dias,48,15498.96,Itu,673
+78,Camila Martins,51,6985.15,Salto,551
+79,Rafael Barros,60,11414.44,Campinas,699
+80,Patrícia Castro,23,13886.53,São Paulo,626
+81,Letícia Souza,26,8439.68,Sorocaba,814
+82,André Costa,22,9559.37,Jundiaí,833
+83,Beatriz Freitas,35,6533.76,Itu,737
+84,Caio Farias,60,12689.09,Salto,527
+85,Ana Lima,60,5897.05,Campinas,795
+86,Bruno Ribeiro,23,7929.87,São Paulo,668
+87,Carla Nogueira,62,9095.98,Sorocaba,622
+88,Diego Prado,53,9588.84,Jundiaí,713
+89,Eduarda Mendes,54,6251.73,Itu,769
+90,Felipe Teixeira,30,9223.64,Salto,623
+91,Gabriela Araújo,59,5772.18,Campinas,635
+92,Henrique Torres,44,14006.23,São Paulo,708
+93,Isabela Alves,37,9663.22,Sorocaba,761
+94,João Duarte,29,13548.68,Jundiaí,642
+95,Karina Batista,30,12412.1,Itu,724
+96,Lucas Ramos,27,5031.18,Salto,533
+97,Mariana Pinto,39,7154.33,Campinas,696
+98,Nicolas Ferreira,58,10295.47,São Paulo,740
+99,Olívia Mello,59,11883.29,Sorocaba,787
+100,Paulo Cunha,45,10855.74,Jundiaí,613
+101,Renata Rocha,49,4941.02,Itu,618
+102,Samuel Lopes,32,4793.98,Salto,648
+103,Tatiane Pacheco,45,3732.67,Campinas,724
+104,Victor Dias,49,8314.42,São Paulo,626
+105,Aline Martins,39,4591.06,Sorocaba,799
+106,Camila Barros,57,12486.15,Jundiaí,836
+107,Rafael Castro,54,8195.94,Itu,735
+108,Patrícia Souza,62,13512.47,Salto,808
+109,Letícia Costa,49,9338.4,Campinas,581
+110,André Freitas,58,15336.01,São Paulo,764
+111,Beatriz Farias,62,10304.39,Sorocaba,720
+112,Caio Lima,33,12065.72,Jundiaí,710
+113,Ana Ribeiro,60,8172.34,Itu,748
+114,Bruno Nogueira,60,3494.54,Salto,737
+115,Carla Prado,66,6658.94,Campinas,785
+116,Diego Mendes,46,6405.88,São Paulo,722
+117,Eduarda Teixeira,63,4676.69,Sorocaba,637
+118,Felipe Araújo,35,5586.43,Jundiaí,725
+119,Gabriela Torres,21,7151.51,Itu,684
+120,Henrique Alves,61,4701.21,Salto,577
+121,Isabela Duarte,56,6594.86,Campinas,649
+122,João Batista,48,4715.21,São Paulo,704
+123,Karina Ramos,58,6944.52,Sorocaba,748
+124,Lucas Pinto,53,3135.06,Jundiaí,763
+125,Mariana Ferreira,35,9840.24,Itu,652
+126,Nicolas Mello,21,5631.07,Salto,717
+127,Olívia Cunha,25,4890.45,Campinas,807
+128,Paulo Rocha,50,4763.33,São Paulo,771
+129,Renata Lopes,66,7747.07,Sorocaba,555
+130,Samuel Pacheco,33,15522.97,Jundiaí,663
+131,Tatiane Dias,67,6376.16,Itu,708
+132,Victor Martins,24,11788.31,Salto,821
+133,Aline Barros,32,8483.84,Campinas,538
+134,Camila Castro,62,3850.99,São Paulo,805
+135,Rafael Souza,22,12174.42,Sorocaba,784
+136,Patrícia Costa,56,6646.49,Jundiaí,671
+137,Letícia Freitas,21,6876.14,Itu,722
+138,André Farias,41,13856.62,Salto,679
+139,Beatriz Lima,44,15058.66,Campinas,583
+140,Caio Ribeiro,67,4041.77,São Paulo,605
+141,Ana Nogueira,46,8516.18,Sorocaba,684
+142,Bruno Prado,30,5916.19,Jundiaí,691
+143,Carla Mendes,54,7772.95,Itu,648
+144,Diego Teixeira,35,9928.93,Salto,804
+145,Eduarda Araújo,28,7058.97,Campinas,503
+146,Felipe Torres,34,3428.79,São Paulo,606
+147,Gabriela Alves,21,9181.14,Sorocaba,650
+148,Henrique Duarte,45,14501.63,Jundiaí,553
+149,Isabela Batista,53,5861.25,Itu,761
+150,João Ramos,52,5636.46,Salto,791
+151,Karina Pinto,63,7754.92,Campinas,784
+152,Lucas Ferreira,26,15226.95,São Paulo,763
+153,Mariana Mello,61,5391.3,Sorocaba,765
+154,Nicolas Cunha,40,14605.37,Jundiaí,505
+155,Olívia Rocha,67,12041.41,Itu,766
+156,Paulo Lopes,31,8944.84,Salto,706
+157,Renata Pacheco,53,4537.81,Campinas,648
+158,Samuel Dias,31,5609.92,São Paulo,840
+159,Tatiane Martins,31,4037.58,Sorocaba,629
+160,Victor Barros,34,15408.08,Jundiaí,643
+161,Aline Castro,56,6505.93,Itu,639
+162,Camila Souza,33,6824.77,Salto,728
+163,Rafael Costa,30,10366.62,Campinas,638
+164,Patrícia Freitas,52,11256.4,São Paulo,580
+165,Letícia Farias,32,12880.5,Sorocaba,748
+166,André Lima,48,7288.01,Jundiaí,669
+167,Beatriz Ribeiro,41,10491.96,Itu,636
+168,Caio Nogueira,61,9875.27,Salto,733
+169,Ana Prado,36,10664.59,Campinas,701
+170,Bruno Mendes,55,4323.85,São Paulo,645
+171,Carla Teixeira,58,10053,Sorocaba,614
+172,Diego Araújo,26,3262.9,Jundiaí,753
+173,Eduarda Torres,67,8730.25,Itu,731
+174,Felipe Alves,54,12131.56,Salto,783
+175,Gabriela Duarte,24,17223.1,Campinas,617
+176,Henrique Batista,40,9214.67,São Paulo,614
+177,Isabela Ramos,35,8762.28,Sorocaba,643
+178,João Pinto,61,11075.65,Jundiaí,645
+179,Karina Ferreira,24,12967.33,Itu,671
+180,Lucas Mello,25,13086.06,Salto,647
+181,Mariana Cunha,47,9561.55,Campinas,819
+182,Nicolas Rocha,42,10907.36,São Paulo,806
+183,Olívia Lopes,62,8076.68,Sorocaba,777
+184,Paulo Pacheco,36,5880.64,Jundiaí,693
+185,Renata Dias,51,6278.99,Itu,720
+186,Samuel Martins,23,8421.29,Salto,603
+187,Tatiane Barros,59,3133.25,Campinas,714
+188,Victor Castro,21,5884.97,São Paulo,621
+189,Aline Souza,26,8781.91,Sorocaba,840
+190,Camila Costa,22,16885.57,Jundiaí,774
+191,Rafael Freitas,32,14912.8,Itu,704
+192,Patrícia Farias,51,13440.92,Salto,716
+193,Letícia Lima,39,3499.23,Campinas,840
+194,André Ribeiro,53,5718.25,São Paulo,840
+195,Beatriz Nogueira,44,5874.69,Sorocaba,775
+196,Caio Prado,38,8859.84,Jundiaí,638
+197,Ana Mendes,50,8578.74,Itu,661
+198,Bruno Teixeira,24,7430.81,Salto,626
+199,Carla Araújo,60,11513.29,Campinas,795
+200,Diego Torres,21,8134.07,São Paulo,733
+201,Eduarda Alves,44,13896.59,Sorocaba,570
+202,Felipe Duarte,67,7242.63,Jundiaí,672
+203,Gabriela Batista,57,3303.31,Itu,551
+204,Henrique Ramos,55,6155.21,Salto,629
+205,Isabela Pinto,23,7912.21,Campinas,472
+206,João Ferreira,66,6603.62,São Paulo,615
+207,Karina Mello,48,3111.4,Sorocaba,694
+208,Lucas Cunha,22,12052.82,Jundiaí,607
+209,Mariana Rocha,51,5201.21,Itu,692
+210,Nicolas Lopes,66,10220.56,Salto,599
+211,Olívia Pacheco,39,5007.4,Campinas,796
+212,Paulo Dias,45,9661.25,São Paulo,711
+213,Renata Martins,33,5532.31,Sorocaba,601
+214,Samuel Barros,39,13850.35,Jundiaí,578
+215,Tatiane Castro,44,7240.47,Itu,573
+216,Victor Souza,32,7654.68,Salto,644
+217,Aline Costa,31,10735.84,Campinas,646
+218,Camila Freitas,38,12361.87,São Paulo,605
+219,Rafael Farias,24,10250.47,Sorocaba,601
+220,Patrícia Lima,65,6290.18,Jundiaí,736
+221,Letícia Ribeiro,56,13321.14,Itu,714
+222,André Nogueira,57,7893.38,Salto,609
+223,Beatriz Prado,45,10044.31,Campinas,782
+224,Caio Mendes,55,4668.88,São Paulo,837
+225,Ana Teixeira,30,6395.36,Sorocaba,737
+226,Bruno Araújo,25,13777.19,Jundiaí,840
+227,Carla Torres,64,14507.87,Itu,687
+228,Diego Alves,59,8113.74,Salto,830
+229,Eduarda Duarte,60,16448.07,Campinas,657
+230,Felipe Batista,47,9955.89,São Paulo,541
+231,Gabriela Ramos,48,8572.8,Sorocaba,564
+232,Henrique Pinto,43,2907.81,Jundiaí,715
+233,Isabela Ferreira,34,6630.81,Itu,650
+234,João Mello,43,6841.39,Salto,647
+235,Karina Cunha,65,5510.34,Campinas,593
+236,Lucas Rocha,27,5501.52,São Paulo,542
+237,Mariana Lopes,46,8457.35,Sorocaba,636
+238,Nicolas Pacheco,66,5977.46,Jundiaí,682
+239,Olívia Dias,30,5530.05,Itu,673
+240,Paulo Martins,46,4912.58,Salto,778
+241,Renata Barros,63,7418.24,Campinas,840
+242,Samuel Castro,59,13073.81,São Paulo,823
+243,Tatiane Souza,62,7270.72,Sorocaba,652
+244,Victor Costa,38,5561.78,Jundiaí,678
+245,Aline Freitas,46,6257.66,Itu,667
+246,Camila Farias,67,5620.12,Salto,781
+247,Rafael Lima,56,15145.86,Campinas,781
+248,Patrícia Ribeiro,22,13001.39,São Paulo,622
+249,Letícia Nogueira,50,17451.01,Sorocaba,604
+250,André Prado,51,10733.89,Jundiaí,717
+251,Beatriz Mendes,59,14708.21,Itu,757
+252,Caio Teixeira,29,5864.73,Salto,675
+253,Ana Araújo,46,11956.49,Campinas,735
+254,Bruno Torres,44,14094.94,São Paulo,721
+255,Carla Alves,56,7348.18,Sorocaba,648
+256,Diego Duarte,25,10191.91,Jundiaí,770
+257,Eduarda Batista,29,3755.5,Itu,634
+258,Felipe Ramos,47,6674.37,Salto,612
+259,Gabriela Pinto,63,4839.23,Campinas,705
+260,Henrique Ferreira,67,11687.84,São Paulo,691
+261,Isabela Mello,34,8845.58,Sorocaba,743
+262,João Cunha,63,2536.04,Jundiaí,676
+263,Karina Rocha,27,7147.06,Itu,519
+264,Lucas Lopes,33,17296.08,Salto,643
+265,Mariana Pacheco,40,10135.44,Campinas,802
+266,Nicolas Dias,32,4512.83,São Paulo,635
+267,Olívia Martins,63,12089.91,Sorocaba,601
+268,Paulo Barros,38,2519.58,Jundiaí,531
+269,Renata Castro,33,14430.02,Itu,616
+270,Samuel Souza,52,10372.54,Salto,707
+271,Tatiane Costa,44,9288.13,Campinas,840
+272,Victor Freitas,42,5829.73,São Paulo,761
+273,Aline Farias,52,15462.41,Sorocaba,783
+274,Camila Lima,52,6458.79,Jundiaí,498
+275,Rafael Ribeiro,35,4158.78,Itu,762
+276,Patrícia Nogueira,24,6674.82,Salto,610
+277,Letícia Prado,24,7182.72,Campinas,577
+278,André Mendes,39,14674.64,São Paulo,618
+279,Beatriz Teixeira,30,6614.35,Sorocaba,575
+280,Caio Araújo,48,10049.09,Jundiaí,736
+281,Ana Torres,45,7856.73,Itu,693
+282,Bruno Alves,51,7408.17,Salto,684
+283,Carla Duarte,24,15726.11,Campinas,560
+284,Diego Batista,64,5208.05,São Paulo,631
+285,Eduarda Ramos,44,6137.2,Sorocaba,727
+286,Felipe Pinto,46,7371.85,Jundiaí,764
+287,Gabriela Ferreira,64,7003.38,Itu,831
+288,Henrique Mello,38,9485.03,Salto,658
+289,Isabela Cunha,66,7027.41,Campinas,638
+290,João Rocha,21,14998.91,São Paulo,719
+291,Karina Lopes,32,5989.97,Sorocaba,671
+292,Lucas Pacheco,63,7166.58,Jundiaí,722
+293,Mariana Dias,41,7673.47,Itu,799
+294,Nicolas Martins,23,12615.73,Salto,559
+295,Olívia Barros,57,3930.57,Campinas,759
+296,Paulo Castro,48,13020.49,São Paulo,643
+297,Renata Souza,59,7456.03,Sorocaba,550
+298,Samuel Costa,42,6190.38,Jundiaí,585
+299,Tatiane Freitas,36,13305.01,Itu,661
+300,Victor Farias,40,9349.68,Salto,675
+301,Aline Lima,26,5035.74,Campinas,779
+302,Camila Ribeiro,21,10835.97,São Paulo,723
+303,Rafael Nogueira,29,16737.44,Sorocaba,715
+304,Patrícia Prado,59,12405.74,Jundiaí,741
+305,Letícia Mendes,41,7116.36,Itu,840
+306,André Teixeira,22,8266.92,Salto,767
+307,Beatriz Araújo,34,5048.47,Campinas,722
+308,Caio Torres,56,4193.82,São Paulo,655
+309,Ana Alves,64,10416.05,Sorocaba,757
+310,Bruno Duarte,42,12036.48,Jundiaí,730
+311,Carla Batista,48,8707,Itu,840
+312,Diego Ramos,40,3265.83,Salto,745
+313,Eduarda Pinto,52,5231.83,Campinas,624
+314,Felipe Ferreira,26,6747.31,São Paulo,689
+315,Gabriela Mello,32,15165.58,Sorocaba,676
+316,Henrique Cunha,59,8366.46,Jundiaí,703
+317,Isabela Rocha,50,7535.9,Itu,596
+318,João Lopes,61,10853.51,Salto,557
+319,Karina Pacheco,61,5049.31,Campinas,687
+320,Lucas Dias,27,15399.6,São Paulo,651
+321,Mariana Martins,47,9419.2,Sorocaba,832
+322,Nicolas Barros,21,10129.07,Jundiaí,633
+323,Olívia Castro,57,8890.44,Itu,698
+324,Paulo Souza,47,5713.55,Salto,840
+325,Renata Costa,61,15047.8,Campinas,679
+326,Samuel Freitas,44,7042,São Paulo,688
+327,Tatiane Farias,58,3533.76,Sorocaba,631
+328,Victor Lima,31,9192.36,Jundiaí,781
+329,Aline Ribeiro,65,15461.26,Itu,735
+330,Camila Nogueira,65,10509.06,Salto,488
+331,Rafael Prado,25,6314.32,Campinas,721
+332,Patrícia Mendes,31,6215.2,São Paulo,749
+333,Letícia Teixeira,47,10681.87,Sorocaba,718
+334,André Araújo,30,9808.2,Jundiaí,781
+335,Beatriz Torres,28,5530.05,Itu,755
+336,Caio Alves,44,5110.78,Salto,730
+337,Ana Duarte,61,8996.28,Campinas,806
+338,Bruno Batista,58,10404.96,São Paulo,686
+339,Carla Ramos,40,8389.5,Sorocaba,676
+340,Diego Pinto,45,11644.29,Jundiaí,627
+341,Eduarda Ferreira,62,15069.31,Itu,594
+342,Felipe Mello,34,8027.13,Salto,599
+343,Gabriela Cunha,30,3730.58,Campinas,826
+344,Henrique Rocha,50,10003.78,São Paulo,692
+345,Isabela Lopes,52,10937.61,Sorocaba,613
+346,João Pacheco,56,6338.57,Jundiaí,764
+347,Karina Dias,44,10368,Itu,686
+348,Lucas Martins,63,5042.21,Salto,723
+349,Mariana Barros,37,7874.74,Campinas,695
+350,Nicolas Castro,45,17071.33,São Paulo,581
+351,Olívia Souza,40,10064.22,Sorocaba,674
+352,Paulo Costa,47,8108.22,Jundiaí,592
+353,Renata Freitas,32,15858.75,Itu,671
+354,Samuel Farias,54,9283.3,Salto,618
+355,Tatiane Lima,64,7317.07,Campinas,603
+356,Victor Ribeiro,37,4368.34,São Paulo,595
+357,Aline Nogueira,24,12825.76,Sorocaba,743
+358,Camila Prado,37,6731.46,Jundiaí,712
+359,Rafael Mendes,21,6617.55,Itu,813
+360,Patrícia Teixeira,42,10696.65,Salto,781

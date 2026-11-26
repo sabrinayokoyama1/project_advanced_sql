@@ -1,35 +1,53 @@
-# project_advanced_sql 
-🌐[PT] Projeto: Simulação de Banco de Dados Financeiros
-Este projeto simula o ambiente de dados de uma instituição financeira, com foco na análise de clientes, contas, transações e empréstimos por meio de SQL.
-**Os dados utilizados são totalmente fictícios**, desenvolvidos exclusivamente para fins educacionais e de demonstração.
+# Projeto Indicadores Financeiros
 
-**Objetivo:**
-Demonstrar a capacidade de estruturar e analisar dados em um contexto próximo ao setor financeiro, com foco em geração de insights relevantes para negócio e apoio à tomada de decisão.
+Análise SQL e aplicação web para explorar uma carteira financeira **inteiramente fictícia**. O projeto recria a simulação original com uma base maior, consultas compatíveis com SQLite e um dashboard navegável.
 
-O projeto aborda:
-Análise de comportamento financeiro de clientes
-Avaliação de risco de crédito e inadimplência
-Construção de indicadores de performance e saúde financeira
-Identificação de padrões de consumo e movimentação
-Abordagem Técnica
+## O que há na base
 
-As análises foram desenvolvidas utilizando SQL com foco em clareza, organização e aderência a boas práticas. Entre os principais recursos utilizados:
-Joins (INNER e LEFT) para integração entre entidades
-CTEs (WITH) para organização lógica e modularização
-Funções agregadas para construção de métricas
-Estruturas condicionais (CASE WHEN) para regras de negócio
-Tratamento de dados nulos (COALESCE)
-Criação de variáveis derivadas para análise comportamental e scoring
-Estrutura dos Dados
+| Entidade | Registros | Campos principais |
+| --- | ---: | --- |
+| Clientes | 360 | cidade, idade, renda mensal, score fictício |
+| Contas | 579 | tipo, saldo, abertura |
+| Transações | 77.827 | data, tipo, categoria, valor |
+| Empréstimos | 271 | principal, saldo devedor, taxa, status |
 
-O modelo foi desenhado para refletir entidades comuns ao contexto financeiro:
-Clientes: dados cadastrais e indicadores de perfil
-Contas: vínculo com clientes e informações de saldo
-Transações: histórico de movimentações financeiras
-Empréstimos: dados relacionados a crédito e endividamento
+As transações cobrem **novembro de 2024 a outubro de 2026**. A fotografia de saldos, dívidas e classificações tem referência em **31/10/2026**. A geração usa a semente fixa `20261126`, por isso os arquivos podem ser reconstruídos de forma idêntica. Não há dados pessoais reais.
 
-🌐[ENG] Project Description
-This project simulates a financial institution data environment, focusing on customer, account, transaction, and loan analysis using SQL.
-**All data is synthetic and fictional**, created for demonstration purposes only.
-The project is designed to showcase the ability to work with structured financial data, generating business-relevant insights such as customer behavior analysis, credit risk evaluation, and financial health indicators.
-Queries are written in Portuguese, reflecting a localized development context while maintaining standard SQL best practices.
+## Explorar o dashboard
+
+A aplicação está em `web/`, usa HTML, CSS e JavaScript e lê o extrato agregado `web/data/dashboard.json`. Para rodar localmente:
+
+```bash
+python -m http.server 8000 -d web
+```
+
+Acesse `http://localhost:8000`. Os filtros de cidade e período atualizam os indicadores de entradas, saídas, resultado, transações, evolução, categorias e comparativo regional. A seção Clientes apresenta uma fotografia atual da carteira; o filtro de período não altera saldo, empréstimos nem as classificações. O botão **Exportar CSV** salva o resumo por cidade da seleção.
+
+## Reproduzir os dados e as consultas
+
+Requer apenas Python 3.10+ e sua biblioteca padrão.
+
+```bash
+python scripts/build_data.py
+python scripts/run_queries.py
+```
+
+`build_data.py` gera quatro CSVs em `data/` e o JSON usado pelo dashboard. `run_queries.py` carrega os CSVs em SQLite na memória, executa as consultas em `queries/` e valida a integridade referencial. O esquema e os índices estão em `data/schema.sql`.
+
+As consultas usam CTEs, agregações, `CASE`, `COALESCE`, `NULLIF`, `LAG`, `DENSE_RANK` e médias móveis. Cada métrica tem definição explícita:
+
+- **Entradas/saídas:** soma de créditos/débitos registrados. A simulação não gera transferências internas.
+- **Resultado:** entradas menos saídas, sem interpretação de lucro contábil.
+- **Risco:** classificação demonstrativa baseada em score fictício, atraso, dívida/renda e gasto médio recente; não é modelo de crédito.
+- **Saúde financeira:** regra ilustrativa entre saldo, renda mensal e saldo devedor na data de referência.
+
+## Estrutura
+
+```text
+data/                  esquema SQL e CSVs sintéticos
+queries/               análises SQL executáveis no SQLite
+scripts/               geração e verificação dos dados
+web/                   dashboard estático e extrato agregado
+```
+
+**Limites:** a distribuição dos registros é simulada para demonstração. Os saldos incluem valores de abertura fictícios, e os indicadores não devem ser usados para decisões financeiras reais.
